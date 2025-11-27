@@ -1,9 +1,8 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
+import postsRoutes from "./posts.routes";
 
 const routes = Router();
 
-routes.get("/", (req: Request, res: Response) => {
-  return res.json({ message: "API running!" });
-});
+routes.use("/posts", postsRoutes);
 
 export default routes;
